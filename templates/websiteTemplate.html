@@ -6,6 +6,11 @@
 </head>
 <body>
 
+<select name="period" id="period">
+    {% for period in periodOptions %}
+    <option> {{period}} </option>
+    {% endfor %}
+</select>
 
 <select name="genre" id="genre">
     {% for genre in genreOptions %}
@@ -13,10 +18,20 @@
     {% endfor %}
 </select>
 
+<select name="actor" id="actor">
+    {% for actor in actorOptions %}
+    <option> {{actor}} </option>
+    {% endfor %}
+</select>
+
+<select name="director" id="director">
+    {% for director in directorOptions %}
+    <option> {{director}} </option>
+    {% endfor %}
+</select>
 
 
-
-<button type="button" >hello there</button>
+<button type="show results" >hello there</button>
 
 </body>
 </html>
