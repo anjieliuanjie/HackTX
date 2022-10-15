@@ -13,20 +13,10 @@ bolly = pd.read_csv(url)
 # Capitalizing first character of genre title
 bolly.Genre = bolly.Genre.str.capitalize()
 
-
-
-
-
-#df = pd.DataFrame(bolly)
 print(bolly[:10].to_string())
 #bolly.info()
-print(bolly.Genre.unique())
-# df = pd.DataFrame(bolly)
-bolly.rename(columns={'Lead Star': 'LeadStar', 'Release Period' : 'ReleasePeriod'}, inplace=True)
-#print(bolly[:10].to_string())
-bolly.info()
-# print(bolly.Genre.unique())
 
+bolly.rename(columns={'Lead Star': 'LeadStar', 'Release Period' : 'ReleasePeriod'}, inplace=True)
 
 actors = bolly.LeadStar.unique()
 actors.sort()
