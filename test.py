@@ -7,7 +7,7 @@ import os
 from werkzeug.security import check_password_hash, generate_password_hash
 from tempfile import mkdtemp
 
-url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/netflix_titles.csv"
+url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/Data%20for%20repository.csv"
 netflix = pd.read_csv(url)
 df = pd.DataFrame(netflix)
 
