@@ -9,6 +9,6 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
     if request.method == "GET":
-        return render_template("websiteTemplate.html")
+        return render_template("websiteTemplate.html", message = "hi there")
     else:
         return "working on it"
