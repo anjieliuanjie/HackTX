@@ -5,41 +5,52 @@
     <title>Finding your perfect Bollywood film!!</title>
 </head>
 <body>
+
+<h1>{{periodOpt}}</h1>
+
 <h1>Finding your perfect Bollywood film!!</h1>
 <p>Have you ever felt like settling down on your couch after a long day of work to watch a Bollywood
     film, but were overwhelmed by your options? We have a solution! Simply enter your preferred
     genre, actor, and director, and we will filter films for you!</p>
+<form action = "/" method = "post">
+    <select name="" id="period">
+        <option>  select a released period</option>
+        {% for period in periodOptions %}
+        <option> {{period}} </option>
+        {% endfor %}
+    </select>
 
-<select name="period" id="period">
-    <option disabled selected value>  select a released period</option>
-    {% for period in periodOptions %}
-    <option> {{period}} </option>
-    {% endfor %}
-</select>
+    <select name="genre" id="genre">
+        <option>  select a genre</option>
+        {% for genre in genreOptions %}
+        <option> {{genre}} </option>
+        {% endfor %}
+    </select>
 
-<select name="genre" id="genre">
-    <option disabled selected value>  select a genre</option>
-    {% for genre in genreOptions %}
-    <option> {{genre}} </option>
-    {% endfor %}
-</select>
+    <select name="actor" id="actor">
+        <option>  select an actor</option>
+        {% for actor in actorOptions %}
+        <option> {{actor}} </option>
+        {% endfor %}
+    </select>
 
-<select name="actor" id="actor">
-    <option disabled selected value>  select an actor</option>
-    {% for actor in actorOptions %}
-    <option> {{actor}} </option>
-    {% endfor %}
-</select>
+    <select name="director" id="director">
+        <option>  select a director</option>
+        {% for director in directorOptions %}
+        <option> {{director}} </option>
+        {% endfor %}
+    </select>
+</form>
 
-<select name="director" id="director">
-    <option disabled selected value>  select a director</option>
-    {% for director in directorOptions %}
-    <option> {{director}} </option>
-    {% endfor %}
-</select>
+<button type="submit">Check out movies to watch!</button>
 
+<script>
+function findMovies() {
+  var period = document.getElementById("period").selectedIndex;
 
-<button type="show results" >hello there</button>
+}
+</script>
+
 
 </body>
 </html>

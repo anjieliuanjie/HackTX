@@ -42,4 +42,7 @@ def hello_world():
                                actorOptions=actors,
                                directorOptions=directors)
     else:
-        return "working on it"
+        print("testing")
+        periodOpt = request.form.get("period")
+        print(periodOpt)
+        return render_template("websiteTemplate.html", periodOpt)
