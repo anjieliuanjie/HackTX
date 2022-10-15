@@ -23,11 +23,6 @@ app = Flask(__name__)
 def hello_world():
     if request.method == "GET":
         return render_template("websiteTemplate.html",
-                               typeOptions = netflix.type.unique(),
-                               directorOptions = netflix.director.unique(),
-                               countryOptions = netflix.cast.unique(),
-                               releaseYearOptions = netflix.cast.unique(),
-                               ratingOptions = netflix.rating.unique(),
-                               durationOptions = netflix.duration.unique())
+                               typeOptions = netflix.type.unique(),)
     else:
         return "working on it"
