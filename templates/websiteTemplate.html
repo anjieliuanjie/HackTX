@@ -11,24 +11,28 @@
     genre, actor, and director, and we will filter films for you!</p>
 
 <select name="period" id="period">
+    <option disabled selected value> -- select an option -- </option>
     {% for period in periodOptions %}
     <option> {{period}} </option>
     {% endfor %}
 </select>
 
 <select name="genre" id="genre">
+    <option disabled selected value> -- select an option -- </option>
     {% for genre in genreOptions %}
     <option> {{genre}} </option>
     {% endfor %}
 </select>
 
 <select name="actor" id="actor">
+    <option disabled selected value> -- select an option -- </option>
     {% for actor in actorOptions %}
     <option> {{actor}} </option>
     {% endfor %}
 </select>
 
 <select name="director" id="director">
+    <option disabled selected value> -- select an option -- </option>
     {% for director in directorOptions %}
     <option> {{director}} </option>
     {% endfor %}
