@@ -8,21 +8,17 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from tempfile import mkdtemp
 
 url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/Data%20for%20repository.csv"
-netflix = pd.read_csv(url)
-df = pd.DataFrame(netflix)
-
-
-#print(netflix[:10].to_string())
-netflix.info()
-
-
-
+bolly = pd.read_csv(url)
+df = pd.DataFrame(bolly)
+#print(bolly[:10].to_string())
+#bolly.info()
+print(bolly.Genre.unique())
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
     if request.method == "GET":
         return render_template("websiteTemplate.html",
-                               typeOptions = netflix.type.unique(),)
+                               genreOptions = bolly.Genre.unique(),)
     else:
         return "working on it"
