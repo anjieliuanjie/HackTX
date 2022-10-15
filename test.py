@@ -9,6 +9,18 @@ from tempfile import mkdtemp
 
 url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/Data%20for%20repository.csv"
 bolly = pd.read_csv(url)
+
+# Capitalizing first character of genre title
+bolly.Genre = bolly.Genre.str.capitalize()
+
+
+
+
+
+#df = pd.DataFrame(bolly)
+print(bolly[:10].to_string())
+#bolly.info()
+print(bolly.Genre.unique())
 # df = pd.DataFrame(bolly)
 bolly.rename(columns={'Lead Star': 'LeadStar', 'Release Period' : 'ReleasePeriod'}, inplace=True)
 #print(bolly[:10].to_string())
@@ -23,7 +35,6 @@ directors = bolly.Director.unique()
 directors.sort()
 
 app = Flask(__name__)
-
 
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
