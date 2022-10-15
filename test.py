@@ -13,10 +13,7 @@ df = pd.DataFrame(netflix)
 
 
 #print(netflix[:10].to_string())
-#netflix.info()
-
-a = netflix.type.unique()
-print(a)
+netflix.info()
 
 
 
@@ -25,6 +22,12 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
     if request.method == "GET":
-        return render_template("websiteTemplate.html", typeOptions = netflix.type.unique())
+        return render_template("websiteTemplate.html",
+                               typeOptions = netflix.type.unique(),
+                               directorOptions = netflix.director.unique(),
+                               countryOptions = netflix.cast.unique(),
+                               releaseYearOptions = netflix.cast.unique(),
+                               ratingOptions = netflix.rating.unique(),
+                               durationOptions = netflix.duration.unique())
     else:
         return "working on it"
