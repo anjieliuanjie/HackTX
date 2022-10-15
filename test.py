@@ -15,20 +15,23 @@ bolly.Genre = bolly.Genre.str.capitalize()
 bolly.Genre.replace("Love_story", "Love story", inplace=True)
 bolly.Genre.replace("Rom__com", "Rom-com", inplace=True)
 
+# testing, can be deleted
 print(bolly[:10].to_string())
 print(bolly.Genre.unique())
 # bolly.info()
 
+# Rename column names
 bolly.rename(columns={'Lead Star': 'LeadStar', 'Release Period': 'ReleasePeriod'}, inplace=True)
 
+# Sort actor and director names
 actors = bolly.LeadStar.unique()
 actors.sort()
 
 directors = bolly.Director.unique()
 directors.sort()
 
+# HTML
 app = Flask(__name__)
-
 
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
