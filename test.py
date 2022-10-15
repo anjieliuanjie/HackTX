@@ -10,13 +10,16 @@ from tempfile import mkdtemp
 url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/Data%20for%20repository.csv"
 bolly = pd.read_csv(url)
 
-# Capitalizing first character of genre title
+# Capitalizing first character of genre title, removing underscores
 bolly.Genre = bolly.Genre.str.capitalize()
+bolly.Genre.replace("Love_story", "Love story", inplace=True)
+bolly.Genre.replace("Rom__com", "Rom-com", inplace=True)
 
 print(bolly[:10].to_string())
-#bolly.info()
+print(bolly.Genre.unique())
+# bolly.info()
 
-bolly.rename(columns={'Lead Star': 'LeadStar', 'Release Period' : 'ReleasePeriod'}, inplace=True)
+bolly.rename(columns={'Lead Star': 'LeadStar', 'Release Period': 'ReleasePeriod'}, inplace=True)
 
 actors = bolly.LeadStar.unique()
 actors.sort()
@@ -25,6 +28,7 @@ directors = bolly.Director.unique()
 directors.sort()
 
 app = Flask(__name__)
+
 
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
