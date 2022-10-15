@@ -6,11 +6,20 @@ from flask import Flask, render_template, send_file, make_response, url_for, Res
 import os
 from werkzeug.security import check_password_hash, generate_password_hash
 from tempfile import mkdtemp
+print("jasmine".capitalize())
 
 url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/Data%20for%20repository.csv"
 bolly = pd.read_csv(url)
-df = pd.DataFrame(bolly)
-#print(bolly[:10].to_string())
+
+# Capitalizing first character of genre title
+bolly.Genre = bolly.Genre.str.capitalize()
+
+
+
+
+
+#df = pd.DataFrame(bolly)
+print(bolly[:10].to_string())
 #bolly.info()
 print(bolly.Genre.unique())
 app = Flask(__name__)
@@ -19,6 +28,6 @@ app = Flask(__name__)
 def hello_world():
     if request.method == "GET":
         return render_template("websiteTemplate.html",
-                               genreOptions = bolly.Genre.unique(),)
+                               genreOptions = bolly.Genre.unique())
     else:
         return "working on it"
