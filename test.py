@@ -7,7 +7,7 @@ import os
 from werkzeug.security import check_password_hash, generate_password_hash
 from tempfile import mkdtemp
 
-url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/Data%20for%20repository.csv"
+url = "https://raw.githubusercontent.com/anjieliuanjie/HackTX/main/imdbmovies.csv"
 bolly = pd.read_csv(url)
 
 # Capitalizing first character of genre title, removing underscores
