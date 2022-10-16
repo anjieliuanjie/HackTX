@@ -1,4 +1,11 @@
 body {
-background-color: rgb(50,95,73)
+background-color: rgb(50,95,73);
+color: rgb(241, 235, 221);
+font-family: Optima;
+padding: 20px
 
+}
+h1 {
+padding: 30px;
+text-align: center;
 }

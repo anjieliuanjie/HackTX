@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import sqlite3
-import pyodbc
 from flask import Flask, render_template, send_file, make_response, url_for, Response, redirect, request
 import os
 from werkzeug.security import check_password_hash, generate_password_hash

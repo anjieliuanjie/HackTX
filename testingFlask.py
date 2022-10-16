@@ -21,8 +21,8 @@ cursor = moviesdb.cursor()
 cursor.execute('SELECT Director FROM imdbTable')
 directors = cursor.fetchall()
 
-for director in directors:
-    print(director)
+# for director in directors:
+# #     print(director)
 
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
