@@ -18,15 +18,27 @@ moviesdb = mysql.connector.connect(
 )
 cursor = moviesdb.cursor()
 
+genreList = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy',
+             'History', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Sport', 'Thriller', ]
+
+cursor.execute('SELECT Genre FROM imdbTable')
+all_genres = cursor.fetchall()
+
 cursor.execute('SELECT Director FROM imdbTable')
-directors = cursor.fetchall()
+all_directors = cursor.fetchall()
+director_list = []
+for i in range(len(all_directors)):
+    count = 0
+    for j in range(len(all_directors)):
+        if all_directors[j] == all_directors[i]:
+            count += 1
+    if count == 1:
+        director_list.append(all_directors[i])
 
-# for director in directors:
-# #     print(director)
-
+print(director_list)
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
-    if request.method == "GET":
-        return render_template("userInput.html", message = "hi there")
+    if request.method == "POST":
+        return 'working on it'
     else:
-        return "working on it"
+        return render_template("userInput.html", genres=genreList)
