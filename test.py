@@ -36,7 +36,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
     if request.method == "GET":
-        return render_template("websiteTemplate.html",
+        return render_template("userInput.html",
                                periodOptions=bolly.ReleasePeriod.unique(),
                                genreOptions=bolly.Genre.unique(),
                                actorOptions=actors,
@@ -45,4 +45,4 @@ def hello_world():
         print("testing")
         periodOpt = request.form.get("period")
         print(periodOpt)
-        return render_template("websiteTemplate.html", periodOpt)
+        return render_template("userInput.html", periodOpt)
