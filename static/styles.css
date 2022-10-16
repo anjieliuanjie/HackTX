@@ -2,10 +2,14 @@ body {
 background-color: rgb(50,95,73);
 color: rgb(241, 235, 221);
 font-family: Optima;
-padding: 20px
+text-align: center;
+padding-bottom: 0px;
+padding-top: 20px;
+
 
 }
 h1 {
-padding: 30px;
+padding-top: 5px;
+padding-bottom: 30px;
 text-align: center;
 }
