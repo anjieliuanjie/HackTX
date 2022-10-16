@@ -39,6 +39,13 @@ print(director_list)
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
     if request.method == "POST":
-        return 'working on it'
+        genre = request.form.get("user_genre")
+        actor = request.form.get("user_actor")
+        director = request.form.get("user_director")
+        # filtered_movies = cursor.execute('''SELECT Series_Title, Released_Year, Runtime, IMDB_Rating, Overview,
+        #                                   FROM imdbTable WHERE Genre = ? AND Director = ?
+        #                                   AND Star1 = ?''', (genre, director, actor))
+        # print(filtered_movies)
+        return render_template("template.html")
     else:
-        return render_template("userInput.html", genres=genreList)
+        return render_template("userInput.html")

@@ -21,36 +21,34 @@
 
 
     <form action = "/" method = "post">
-    <select name="genre" id="genre">
-        <option>  select a genre</option>
-        {% for genre in genres %}
-        <option> {{genre}} </option>
-        {% endfor %}
-    </select>
     <br>
     <div class="d-flex justify-content-center">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">genre</label>
-          <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="genre">
+          <label for="genreSearch" class="form-label">genre</label>
+          <input type="name" class="form-control" id="genreSearch" placeholder="genre" name="user_genre">
         </div>
     </div>
 
     <div class="d-flex justify-content-center">
         <div class="mb-3">
-          <label for="exampleFormControlInput2" class="form-label">actor</label>
-          <input type="name" class="form-control" id="exampleFormControlInput2" placeholder="actor">
+          <label for="actor_search" class="form-label">actor</label>
+          <input type="name" class="form-control" id="actor_search" placeholder="actor" name="user_actor">
         </div>
     </div>
 
     <div class="d-flex justify-content-center">
         <div class="mb-3">
-          <label for="exampleFormControlInput3" class="form-label">director</label>
-          <input type="name" class="form-control form-control sm" id="exampleFormControlInput3" placeholder="director">
+          <label for="director_search" class="form-label">director</label>
+          <input type="name" class="form-control form-control sm" id="director_search"
+                 placeholder="director" name="user_director">
         </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary form-control" type="submit">find your perfect match</button>
     </div>
 </form>
 
-<button type="submit">Check out movies to watch!</button>
+
 
 <script>
 function findMovies() {

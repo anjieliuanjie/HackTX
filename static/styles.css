@@ -1,8 +1,23 @@
 .form-control {
 width: 500px;
 height: auto;
+outline
 }
 
+.btn-primary {
+--bs-btn-bg: rgb(127, 167, 123);
+--bs-btn-border-color: rgb(127, 167, 123);
+--bs-btn-hover-bg: rgb(165, 203, 156);
+--bs-btn-hover-border-color: rgb(127, 167, 123);
+--bs-btn-focus-shadow-rgb: rgb(165, 203, 156);
+--bs-btn-active-color: rgb(165, 203, 156);
+--bs-btn-active-bg: rgb(165, 203, 156);
+--bs-btn-active-border-color: rgb(165, 203, 156);
+--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+--bs-btn-disabled-color: rgb(165, 203, 156);
+--bs-btn-disabled-bg: rgb(165, 203, 156);
+--bs-btn-disabled-border-color: rgb(165, 203, 156);
+}
 body {
 background-color: rgb(50,95,73);
 color: rgb(241, 235, 221);
